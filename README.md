@@ -1,4 +1,4 @@
-# Mint Lang Experiments
+# Mint Lang Experiments [![Build Status](https://travis-ci.org/murielsilveira/mint-experiments.svg?branch=master)](https://travis-ci.org/murielsilveira/mint-experiments)
 
 ## Getting started
 
