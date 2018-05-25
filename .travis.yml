@@ -1,0 +1,18 @@
+language: crystal
+
+notifications:
+  email: false
+
+before_install:
+- curl -s -o mint https://s3-eu-west-1.amazonaws.com/mint-lang/mint-latest-linux
+- chmod +x mint
+install: mint install
+
+script: mint test
+
+before_deploy: mint build
+deploy:
+  provider: firebase
+  token:
+    secure: Nmav+UvnQeUddB6+m4bURu3QOJw3W+dsxGDErEHjk9Eca+NMmbO//ioXZpLIvofHb9bUDP1Brb5R+U0AaqNn73p+p0ECsZdIuaIE+eZmtS3D7UaI8wsRV3vZiWDNySSvjoHQ9lo6vpwWVGIPQnD9soO+V6FcvJauIt4bs5NDJzm1m8BQ2WmqR8jgXgVzXOc+eIQ/pB5gK2KsUAfS+/LjsRs5tcUcGVSaM5ijIIoeHoO3nn2dIX2crMjuYH2ar1C8rQbvqeYaFpt9qheRFSQPfztPlFljbRPZqaBIhGKT2ePochhn3RMBosRi6C9mC0jbLM4qkww7LDW1nWqsOYfcsUUoLgXpzeuW5ZjpfWz+PJ0ejxMsxhf62vpRXhvn7ARza/M9Xy9n39nj8aIYyWAjrRtHkYq5Bq9TDnEduPvgw2hZaANTGag2o6OsoBsgBMxKcYvoMmXbzsNZAKWYTO7tPnuDPhIHTSO3AAwszNcIb6XRmIyVrydqfO16msUH4++USlzolLrm6NukdFdNP+cKoRHaHlMZqskN0+Ws992ZtPsuvGFcDTDe1/yu7ynlxQ0znh4vPGSiicMVaMCRU1pnWWQHlaJdeYbhRAda58rSO1Zkg9U1HsXoFR2jdrEd9WTneZmTG+Lm1/xsNuvjAGpT9BLLqWa/ax03rX2OcdlIW/w=
+  skip_cleanup: true
