@@ -6,11 +6,11 @@ notifications:
 before_install:
 - curl -s -o mint https://s3-eu-west-1.amazonaws.com/mint-lang/mint-latest-linux
 - chmod +x mint
-install: mint install
+install: ./mint install
 
-script: mint test
+script: ./mint test
 
-before_deploy: mint build
+before_deploy: ./mint build
 deploy:
   provider: firebase
   token:
